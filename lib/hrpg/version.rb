@@ -1,3 +1,3 @@
-module Habitrpgcli
+class HRPG
   VERSION = "0.0.1"
 end

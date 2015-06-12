@@ -1,31 +1,29 @@
-# Habitrpgcli
+# HRPG
 
-TODO: Write a gem description
+A command line interface for HabitRPG: Your Life the Role Playing Game.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install it with:
 
-```ruby
-gem 'habitrpgcli'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install habitrpgcli
+    $ gem install hrpg
 
 ## Usage
 
-TODO: Write usage instructions here
+Currently needs USER_ID and API_TOKEN to be set in your environment
+variables, that's because it isn't finished yet.
 
-## Contributing
+  # Show your HP/MP stats
+  $ hrpg status
 
-1. Fork it ( https://github.com/[my-github-username]/habitrpgcli/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+  # List your habits
+  $ hrpg habits
+
+  # List your dailys
+  $ hrpg dailys
+
+  # List your todos
+  $ hrpg todos
+
+  # For more information
+  $ hrpg help
