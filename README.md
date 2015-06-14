@@ -22,17 +22,31 @@ Once that's setup the following commands should work:
 
 ```sh
 # Show your HP/MP stats
+
 $ hrpg status
+# HP 47.1/50
+# MP 44/44
+# EXP 117/220
 
 # List your habits
+
 $ hrpg habits
+# Study
+# Turn out the lights
 
 # List your dailys
+
 $ hrpg dailys
+# Feed the fish
+# Sort mail
 
 # List your todos
+
 $ hrpg todos
+# Remember the milk
+# Put the bins out
 
 # For more information
+
 $ hrpg help
 ```
