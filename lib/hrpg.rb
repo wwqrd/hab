@@ -60,11 +60,11 @@ class HRPG
       end
     end
 
-    command :dailys do |c|
-      c.syntax = 'habitrpg dailys [options]'
-      c.summary = 'Show my dailys list'
+    command :dailies do |c|
+      c.syntax = 'habitrpg dailies [options]'
+      c.summary = 'Show my dailies list'
       c.action do |args, options|
-        print_tasks(client.user.tasks.dailys)
+        print_tasks(client.user.tasks.dailies)
       end
     end
 

@@ -34,9 +34,9 @@ $ hrpg habits
 # Study
 # Turn out the lights
 
-# List your dailys
+# List your dailies
 
-$ hrpg dailys
+$ hrpg dailies
 # Feed the fish
 # Sort mail
 
