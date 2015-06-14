@@ -1,22 +1,24 @@
-require "hrpg/version"
-require "dotenv"
-require "habit_client"
+require "yaml"
 require "rumoji"
-require "rumoji/erase"
 require "colorize"
 require "commander"
-
-Dotenv.load
+require "rumoji/erase"
+require "hrpg/version"
+require "habit_client"
 
 class HRPG
   include Commander::Methods
 
+  def config
+    @config ||= YAML::load_file "#{Dir.home}/.hrpg"
+  end
+
   def user_id
-    ENV['USER_ID']
+    config["user_id"]
   end
 
   def api_token
-    ENV['API_TOKEN']
+    config["api_token"]
   end
 
   def client
@@ -32,7 +34,12 @@ class HRPG
 
   def run
     program :version, '0.0.1'
-    program :description, 'A command line interface for HabitRPG: Your Life the Role Playing Game.'
+    program :description, "A command line interface for HabitRPG: Your Life the Role Playing Game.\n\n" \
+      "To use you need to set up a config file with your settings:\n\n" \
+      "  # in ~/.hrpg\n" \
+      "  user_id: YOUR_HABITRPG_USER_ID\n" \
+      "  api_token: YOUR_HABITRPG_API_TOKEN\n\n" \
+      "More info at: https://github.com/steeeve/hrpg"
 
     command :status do |c|
       c.syntax = 'habitrpg status [options]'
