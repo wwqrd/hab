@@ -10,20 +10,29 @@ Install it with:
 
 ## Usage
 
-Currently needs USER_ID and API_TOKEN to be set in your environment
-variables, that's because it isn't finished yet.
+To use you need to set up a config file with your settings:
 
-  # Show your HP/MP stats
-  $ hrpg status
+```yaml
+# in ~/.hrpg
+user_id: YOUR_HABITRPG_USER_ID
+api_token: YOUR_HABITRPG_API_TOKEN
+```
 
-  # List your habits
-  $ hrpg habits
+Once that's setup the following commands should work:
 
-  # List your dailys
-  $ hrpg dailys
+```sh
+# Show your HP/MP stats
+$ hrpg status
 
-  # List your todos
-  $ hrpg todos
+# List your habits
+$ hrpg habits
 
-  # For more information
-  $ hrpg help
+# List your dailys
+$ hrpg dailys
+
+# List your todos
+$ hrpg todos
+
+# For more information
+$ hrpg help
+```
