@@ -2,6 +2,14 @@
 
 A command line interface for HabitRPG: Your Life the Role Playing Game.
 
+Mostly intended to play nice with other unixy programs i.e.
+
+```sh
+$ hrpg stats | grep HP
+# HP 47
+# MAX_HP 50
+```
+
 ## Installation
 
 Install it with:
