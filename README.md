@@ -22,12 +22,9 @@ api_token: YOUR_HABITRPG_API_TOKEN
 
 Once your config is set up the following commands should work.
 
-Show your current status:
+Show your current status (pretty formatted):
 ```sh
 $ hrpg status
-# HP 47.1/50
-# MP 44/44
-# EXP 117/220
 ```
 
 Show your full stats:
