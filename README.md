@@ -1,6 +1,6 @@
 # HRPG
 
-A command line interface for HabitRPG: Your Life the Role Playing Game.
+Another command line interface for HabitRPG: Your Life the Role Playing Game.
 
 Mostly intended to play nice with other unixy programs i.e.
 
