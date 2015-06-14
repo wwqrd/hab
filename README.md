@@ -25,6 +25,11 @@ Once your config is set up the following commands should work.
 Show your current status (pretty formatted):
 ```sh
 $ hrpg status
+# HP      |■■■■■■■■■■■■■■■■■■  | 47/50
+# EXP     |■■■■■■■■■■■         | 126/220
+# MP      |■■■■■■■■■■■■■■■■■■■■| 44/44
+# DAILIES |■■■■■■■■■■■■■■■■■■■■| 3/3
+# TODOS   |                    | 0/2
 ```
 
 Show your full stats:
