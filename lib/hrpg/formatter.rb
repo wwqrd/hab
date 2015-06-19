@@ -40,15 +40,22 @@ GP #{stats.gp}
 BLOCK
     end
 
-    def tasks(tasks)
-      tasks.map { |task| task(task) }.join("\n")
+    def tasks(tasks, options = {})
+      tasks.map { |task| task(task, options) }.join("\n")
     end
 
-    def task(task)
-      Rumoji.erase(task.text)
-        .gsub(/\ \ /, ' ')
-        .strip
-        .colorize(value_color(task.value))
+    def task(task, options = {})
+      if options[:emoji] == true
+        Rumoji
+          .decode(task.text)
+          .colorize(value_color(task.value))
+      else
+        Rumoji
+          .erase(task.text)
+          .gsub(/\ \ /, ' ')
+          .strip
+          .colorize(value_color(task.value))
+      end
     end
 
   end

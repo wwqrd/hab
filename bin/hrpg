@@ -35,8 +35,10 @@ end
 command :habits do |c|
   c.syntax = 'habitrpg habits [options]'
   c.summary = 'Show my habit list'
+  c.option '--emoji', 'Show emoji'
   c.action do
-    puts HRPG.habits
+    options.default emoji: false
+    puts HRPG.habits(options)
   end
 end
 
@@ -45,8 +47,9 @@ command :dailies do |c|
   c.summary = 'Show my dailies list'
   c.option '--completed', 'Only show completed'
   c.option '--uncompleted', 'Only show uncompleted'
+  c.option '--emoji', 'Show emoji'
   c.action do |_args, options|
-    options.default completed: false, uncompleted: false
+    options.default completed: false, uncompleted: false, emoji: false
     puts HRPG.dailies(options)
   end
 end
@@ -56,8 +59,9 @@ command :todos do |c|
   c.summary = 'Show my todos list'
   c.option '--completed', 'Only show completed'
   c.option '--uncompleted', 'Only show uncompleted'
+  c.option '--emoji', 'Show emoji'
   c.action do |_args, options|
-    options.default completed: false, uncompleted: false
+    options.default completed: false, uncompleted: false, emoji: false
     puts HRPG.todos(options)
   end
 end
