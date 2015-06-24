@@ -26,7 +26,7 @@ module HRPG::Formatter
     end
 
     def task(task)
-      Rumoji.erase(task.text).gsub(/\ \ /, " ").strip
+      Rumoji.erase(task.text).gsub(/\ \ /, " ").strip.colorize(value_color(task.value))
     end
 
   end
