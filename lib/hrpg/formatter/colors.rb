@@ -9,19 +9,19 @@ module HRPG::Formatter::Colors
   }
 
   STAT_COLORS = {
-    :HP => :red,
-    :MP => :green,
-    :EXP => :yellow,
-    :DAILIES => :light_magenta,
-    :TODOS => :light_blue
+    HP: :red,
+    MP: :green,
+    EXP: :yellow,
+    DAILIES: :light_magenta,
+    TODOS: :light_blue
   }
 
   def value_color(value)
-    VALUE_COLORS.select {|color| color === value }.values.first
+    VALUE_COLORS.select { |color| color == value }.values.first
   end
 
   def stat_color(label)
-    STAT_COLORS.has_key?(label) ? STAT_COLORS[label] : :default
+    STAT_COLORS.key?(label) ? STAT_COLORS[label] : :default
   end
 
 end
