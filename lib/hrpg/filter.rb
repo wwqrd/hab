@@ -11,11 +11,11 @@ module HRPG::Filter
   end
 
   def self.completed(tasks)
-    tasks.select! { |task| task.completed? }
+    tasks.select!(&:completed?)
   end
 
   def self.uncompleted(tasks)
-    tasks.select! { |task| task.uncompleted? }
+    tasks.select!(&:uncompleted?)
   end
 
 end

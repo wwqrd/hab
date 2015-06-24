@@ -1,5 +1,63 @@
 #!/usr/bin/env ruby
 
+require 'commander/import'
 require 'hrpg'
 
-HRPG.new.run
+program :version, '0.0.1'
+program :description, <<-BLOCK
+A command line interface for HabitRPG: Your Life the Role Playing Game
+
+To use you need to set up a config file with your settings:
+
+# in ~/.hrpg
+user_id: YOUR_HABITRPG_USER_ID
+api_token: YOUR_HABITRPG_API_TOKEN
+
+More info at: https://github.com/steeeve/hrpg
+BLOCK
+
+command :status do |c|
+  c.syntax = 'habitrpg status [options]'
+  c.summary = 'Show my status overview'
+  c.action do
+    puts HRPG.status
+  end
+end
+
+command :stats do |c|
+  c.syntax = 'habitrpg stats [options]'
+  c.summary = 'Show all my stats'
+  c.action do
+    puts HRPG.stats
+  end
+end
+
+command :habits do |c|
+  c.syntax = 'habitrpg habits [options]'
+  c.summary = 'Show my habit list'
+  c.action do
+    puts HRPG.habits
+  end
+end
+
+command :dailies do |c|
+  c.syntax = 'habitrpg dailies [options]'
+  c.summary = 'Show my dailies list'
+  c.option '--completed', 'Only show completed'
+  c.option '--uncompleted', 'Only show uncompleted'
+  c.action do |_args, options|
+    options.default completed: false, uncompleted: false
+    puts HRPG.dailies(options)
+  end
+end
+
+command :todos do |c|
+  c.syntax = 'habitrpg todos [options]'
+  c.summary = 'Show my todos list'
+  c.option '--completed', 'Only show completed'
+  c.option '--uncompleted', 'Only show uncompleted'
+  c.action do |_args, options|
+    options.default completed: false, uncompleted: false
+    puts HRPG.todos(options)
+  end
+end
