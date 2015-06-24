@@ -15,8 +15,8 @@ module HRPG::Formatter::Graph
   end
 
   def statbar(label, value, max)
-    description = label.to_s.ljust(7).colorize(color(label))
-    chart = bar(value, max, color(label))
+    description = label.to_s.ljust(7).colorize(stat_color(label))
+    chart = bar(value, max, stat_color(label))
     of = "/#{max.to_i}".colorize(:light_black)
     numeric = "#{value.to_i}#{of}".rjust(10)
     "#{description} #{chart} #{numeric}"
