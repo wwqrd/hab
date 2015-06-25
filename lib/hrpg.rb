@@ -24,8 +24,8 @@ module HRPG
     Formatter.stats(client.user.stats)
   end
 
-  def self.habits
-    Formatter.tasks(client.user.tasks.habits)
+  def self.habits(options)
+    Formatter.tasks(client.user.tasks.habits, emoji: options.emoji)
   end
 
   def self.dailies(options)
@@ -33,7 +33,7 @@ module HRPG
                              options.completed,
                              options.uncompleted)
 
-    Formatter.tasks(tasks)
+    Formatter.tasks(tasks, emoji: options.emoji)
   end
 
   def self.todos(options)
@@ -41,7 +41,7 @@ module HRPG
                              options.completed,
                              options.uncompleted)
 
-    Formatter.tasks(tasks)
+    Formatter.tasks(tasks, emoji: options.emoji)
   end
 
 end
