@@ -36,7 +36,7 @@ command :habits do |c|
   c.syntax = 'habitrpg habits [options]'
   c.summary = 'Show my habit list'
   c.option '--emoji', 'Show emoji'
-  c.action do
+  c.action do |_args, options|
     options.default emoji: false
     puts HRPG.habits(options)
   end

@@ -17,7 +17,7 @@ module HRPG::Formatter::Colors
   }
 
   def value_color(value)
-    VALUE_COLORS.select { |color| color == value }.values.first
+    VALUE_COLORS.select { |key, color| key.cover? value }.values.first
   end
 
   def stat_color(label)
