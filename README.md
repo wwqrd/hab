@@ -8,6 +8,15 @@ Mostly intended to play nice with other unixy programs i.e.
 $ hrpg stats | grep HP
 # HP 47
 # MAX_HP 50
+
+$ hrpg todos
+# Feed the fish
+# Sort mail
+
+$ echo "Remember the milk" | hrpg todos
+# Remember the milk
+# Feed the fish
+# Sort mail
 ```
 
 ## Installation
@@ -88,6 +97,11 @@ $ hrpg todos --completed
 
 $ hrpg todos --uncompleted
 # Put the bins out
+```
+
+Add tasks by using STDIN:
+```sh
+echo "Remember the milk" | hrpg todos
 ```
 
 For more information:
