@@ -24,6 +24,23 @@ module HRPG
     Formatter.stats(client.user.stats)
   end
 
+  def self.add_task(task, type)
+    client.user.tasks.create({
+      text: task,
+      type: type
+    })
+  end
+
+  def self.add_tasks(tasks, type)
+    tasks.each do |task|
+      self.add_task(task, type)
+    end
+  end
+
+  def self.stdin_tasks
+    !STDIN.tty? ?  STDIN.read.split("\n") : []
+  end
+
   def self.habits(options)
     Formatter.tasks(client.user.tasks.habits, emoji: options.emoji)
   end

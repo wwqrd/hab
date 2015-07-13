@@ -38,6 +38,8 @@ command :habits do |c|
   c.option '--emoji', 'Show emoji'
   c.action do |_args, options|
     options.default emoji: false
+
+    HRPG.add_tasks(HRPG.stdin_tasks, 'habit')
     puts HRPG.habits(options)
   end
 end
@@ -50,6 +52,8 @@ command :dailies do |c|
   c.option '--emoji', 'Show emoji'
   c.action do |_args, options|
     options.default completed: false, uncompleted: false, emoji: false
+
+    HRPG.add_tasks(HRPG.stdin_tasks, 'daily')
     puts HRPG.dailies(options)
   end
 end
@@ -62,6 +66,8 @@ command :todos do |c|
   c.option '--emoji', 'Show emoji'
   c.action do |_args, options|
     options.default completed: false, uncompleted: false, emoji: false
+
+    HRPG.add_tasks(HRPG.stdin_tasks, 'todo')
     puts HRPG.todos(options)
   end
 end
