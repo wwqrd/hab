@@ -15,9 +15,9 @@ module HRPG::Formatter
       dailies_complete_count = dailies.count(&:completed?)
       todos_complete_count = todos.count(&:completed?)
       <<-BLOCK
-#{statbar(:HP, stats.hp, stats.maxHealth)}
-#{statbar(:EXP, stats.exp, stats.toNextLevel)}
-#{statbar(:MP, stats.mp, stats.maxMP)}
+#{statbar(:HP, stats.hp, stats.max_health)}
+#{statbar(:EXP, stats.exp, stats.to_next_level)}
+#{statbar(:MP, stats.mp, stats.max_mp)}
 #{statbar(:DAILIES, dailies_complete_count, dailies.count)}
 #{statbar(:TODOS, todos_complete_count, todos.count)}
 BLOCK
