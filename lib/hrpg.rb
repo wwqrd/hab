@@ -45,18 +45,17 @@ module HRPG
     Formatter.tasks(client.user.tasks.habits, emoji: options.emoji)
   end
 
+
   def self.dailies(options)
     tasks = Filter.by_status(client.user.tasks.dailies,
-                             options.completed,
-                             options.uncompleted)
+                             options)
 
     Formatter.tasks(tasks, emoji: options.emoji)
   end
 
   def self.todos(options)
     tasks = Filter.by_status(client.user.tasks.todos,
-                             options.completed,
-                             options.uncompleted)
+                             options)
 
     Formatter.tasks(tasks, emoji: options.emoji)
   end

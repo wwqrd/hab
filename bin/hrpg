@@ -46,12 +46,12 @@ end
 
 command :dailies do |c|
   c.syntax = 'habitrpg dailies [options]'
-  c.summary = 'Show my dailies list'
-  c.option '--completed', 'Only show completed'
-  c.option '--uncompleted', 'Only show uncompleted'
+  c.summary = 'Show my dailies list, shows uncompleted by default'
+  c.option '--completed', 'Show only completed'
+  c.option '--all', 'Show completed & uncompleted'
   c.option '--emoji', 'Show emoji'
   c.action do |_args, options|
-    options.default completed: false, uncompleted: false, emoji: false
+    options.default completed: false, all: false, emoji: false
 
     HRPG.add_tasks(HRPG.stdin_tasks, 'daily')
     puts HRPG.dailies(options)
@@ -60,12 +60,12 @@ end
 
 command :todos do |c|
   c.syntax = 'habitrpg todos [options]'
-  c.summary = 'Show my todos list'
-  c.option '--completed', 'Only show completed'
-  c.option '--uncompleted', 'Only show uncompleted'
+  c.summary = 'Show my todos list, shows uncompleted by default'
+  c.option '--completed', 'Show only completed'
+  c.option '--all', 'Show completed & uncompleted'
   c.option '--emoji', 'Show emoji'
   c.action do |_args, options|
-    options.default completed: false, uncompleted: false, emoji: false
+    options.default completed: false, all: false, emoji: false
 
     HRPG.add_tasks(HRPG.stdin_tasks, 'todo')
     puts HRPG.todos(options)
