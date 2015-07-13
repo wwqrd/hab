@@ -3,7 +3,7 @@ module HRPG::Filter
   def self.by_status(tasks, completed, uncompleted)
     if completed && !uncompleted
       self.completed(tasks)
-    elsif completed && !uncompleted
+    elsif !completed && uncompleted
       self.uncompleted(tasks)
     else
       tasks
@@ -15,7 +15,7 @@ module HRPG::Filter
   end
 
   def self.uncompleted(tasks)
-    tasks.select!(&:uncompleted?)
+    tasks.select! { |task| !task.completed? }
   end
 
 end
