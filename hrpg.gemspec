@@ -26,5 +26,9 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'rumoji', '~> 0.4'
   spec.add_runtime_dependency 'colorize', '~> 0.7'
   spec.add_runtime_dependency 'commander', '~> 4.3'
-
+  spec.post_install_message = <<-MESSAGE
+!    The 'hrpg' gem has been deprecated and has been replaced by 'hab'.
+!    See: https://rubygems.org/gems/hab
+!    And: https://github.com/steeeve/hab
+MESSAGE
 end

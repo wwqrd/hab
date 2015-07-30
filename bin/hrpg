@@ -3,6 +3,8 @@
 require 'commander/import'
 require 'hrpg'
 
+warn "[DEPRECATION] This gem has been renamed to 'hab' and will no longer be supported. Please switch to 'hab' as soon as possible."
+
 program :version, '0.0.1'
 program :description, <<-BLOCK
 A command line interface for HabitRPG: Your Life the Role Playing Game
