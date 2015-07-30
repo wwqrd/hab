@@ -2,11 +2,11 @@ require 'yaml'
 require 'commander'
 require 'habit_client'
 
-module HRPG
-  require 'hrpg/version'
-  require 'hrpg/config'
-  require 'hrpg/filter'
-  require 'hrpg/formatter'
+module Hab
+  require 'hab/version'
+  require 'hab/config'
+  require 'hab/filter'
+  require 'hab/formatter'
 
   def self.config
     @@config ||= Config.new

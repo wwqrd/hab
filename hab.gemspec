@@ -1,14 +1,14 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'hrpg/version'
+require 'hab/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'hrpg'
-  spec.version       = HRPG::VERSION
+  spec.name          = 'hab'
+  spec.version       = Hab::VERSION
   spec.authors       = ['Stephen Mckellar']
   spec.email         = ['stephen@thingmaker.io']
-  spec.summary       = 'A command line interface for HabitRPG'
+  spec.summary       = 'A command line interface for Habitica'
   spec.homepage      = ''
   spec.license       = 'MIT'
   spec.files         = `git ls-files -z`.split("\x0")

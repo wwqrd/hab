@@ -1,3 +1,3 @@
-module HRPG
+module Hab
   VERSION = '0.0.6'
 end

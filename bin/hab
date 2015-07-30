@@ -1,51 +1,51 @@
 #!/usr/bin/env ruby
 
 require 'commander/import'
-require 'hrpg'
+require 'hab'
 
 program :version, '0.0.1'
 program :description, <<-BLOCK
-A command line interface for HabitRPG: Your Life the Role Playing Game
+A command line interface for Habitica: Your Life the Role Playing Game
 
 To use you need to set up a config file with your settings:
 
-# in ~/.hrpg
-user_id: YOUR_HABITRPG_USER_ID
-api_token: YOUR_HABITRPG_API_TOKEN
+  # in ~/.habitica
+  user_id: YOUR_HABITRPG_USER_ID
+  api_token: YOUR_HABITRPG_API_TOKEN
 
 More info at: https://github.com/steeeve/hrpg
 BLOCK
 
 command :status do |c|
-  c.syntax = 'habitrpg status [options]'
+  c.syntax = 'status [options]'
   c.summary = 'Show my status overview'
   c.action do
-    puts HRPG.status
+    puts Hab.status
   end
 end
 
 command :stats do |c|
-  c.syntax = 'habitrpg stats [options]'
+  c.syntax = 'stats [options]'
   c.summary = 'Show all my stats'
   c.action do
-    puts HRPG.stats
+    puts Hab.stats
   end
 end
 
 command :habits do |c|
-  c.syntax = 'habitrpg habits [options]'
+  c.syntax = 'habits [options]'
   c.summary = 'Show my habit list'
   c.option '--emoji', 'Show emoji'
   c.action do |_args, options|
     options.default emoji: false
 
-    HRPG.add_tasks(HRPG.stdin_tasks, 'habit')
-    puts HRPG.habits(options)
+    Hab.add_tasks(Hab.stdin_tasks, 'habit')
+    puts Hab.habits(options)
   end
 end
 
 command :dailies do |c|
-  c.syntax = 'habitrpg dailies [options]'
+  c.syntax = 'dailies [options]'
   c.summary = 'Show my dailies list, shows uncompleted by default'
   c.option '--completed', 'Show only completed'
   c.option '--all', 'Show completed & uncompleted'
@@ -53,13 +53,13 @@ command :dailies do |c|
   c.action do |_args, options|
     options.default completed: false, all: false, emoji: false
 
-    HRPG.add_tasks(HRPG.stdin_tasks, 'daily')
-    puts HRPG.dailies(options)
+    Hab.add_tasks(Hab.stdin_tasks, 'daily')
+    puts Hab.dailies(options)
   end
 end
 
 command :todos do |c|
-  c.syntax = 'habitrpg todos [options]'
+  c.syntax = 'todos [options]'
   c.summary = 'Show my todos list, shows uncompleted by default'
   c.option '--completed', 'Show only completed'
   c.option '--all', 'Show completed & uncompleted'
@@ -67,7 +67,7 @@ command :todos do |c|
   c.action do |_args, options|
     options.default completed: false, all: false, emoji: false
 
-    HRPG.add_tasks(HRPG.stdin_tasks, 'todo')
-    puts HRPG.todos(options)
+    Hab.add_tasks(Hab.stdin_tasks, 'todo')
+    puts Hab.todos(options)
   end
 end

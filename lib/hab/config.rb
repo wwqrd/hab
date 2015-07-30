@@ -1,9 +1,9 @@
-module HRPG
+module Hab
 
   class Config
 
     def config
-      @config ||= YAML.load_file "#{Dir.home}/.hrpg"
+      @config ||= YAML.load_file "#{Dir.home}/.habitica"
     end
 
     def user_id

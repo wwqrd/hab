@@ -1,6 +1,6 @@
 require 'colorize'
 
-module HRPG::Formatter
+module Hab::Formatter
 
   module Graph
 
