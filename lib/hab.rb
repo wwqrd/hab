@@ -1,6 +1,6 @@
 require 'yaml'
 require 'commander'
-require 'habit_client'
+require 'habitica_client'
 
 module Hab
   require 'hab/version'
@@ -13,7 +13,7 @@ module Hab
   end
 
   def self.client
-    @@client ||= HabitClient.new(config.user_id, config.api_token)
+    @@client ||= HabiticaClient.new(config.user_id, config.api_token)
   end
 
   def self.status

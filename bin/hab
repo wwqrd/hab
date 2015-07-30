@@ -3,7 +3,7 @@
 require 'commander/import'
 require 'hab'
 
-program :version, '0.0.1'
+program :version, Hab::VERSION
 program :description, <<-BLOCK
 A command line interface for Habitica: Your Life the Role Playing Game
 
