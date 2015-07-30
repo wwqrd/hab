@@ -1,6 +1,6 @@
 # Hab
 
-Another command line interface for HabitRPG: Your Life the Role Playing Game.
+Another command line interface for Habitica: Your Life the Role Playing Game.
 
 Mostly intended to play nice with other unixy programs i.e.
 
@@ -31,8 +31,8 @@ To use you need to set up a config file with your settings:
 
 ```yaml
 # in ~/.habitica
-user_id: YOUR_HABITRPG_USER_ID
-api_token: YOUR_HABITRPG_API_TOKEN
+user_id: YOUR_HABITICA_USER_ID
+api_token: YOUR_HABITICA_API_TOKEN
 ```
 
 ### Commands
