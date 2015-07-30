@@ -1,19 +1,19 @@
-# HRPG
+# Hab
 
 Another command line interface for HabitRPG: Your Life the Role Playing Game.
 
 Mostly intended to play nice with other unixy programs i.e.
 
 ```sh
-$ hrpg stats | grep HP
+$ hab stats | grep HP
 # HP 47
 # MAX_HP 50
 
-$ hrpg todos
+$ hab todos
 # Feed the fish
 # Sort mail
 
-$ echo "Remember the milk" | hrpg todos
+$ echo "Remember the milk" | hab todos
 # Remember the milk
 # Feed the fish
 # Sort mail
@@ -23,14 +23,14 @@ $ echo "Remember the milk" | hrpg todos
 
 Install it with:
 
-    $ gem install hrpg
+    $ gem install hab
 
 ## Usage
 
 To use you need to set up a config file with your settings:
 
 ```yaml
-# in ~/.hrpg
+# in ~/.habitica
 user_id: YOUR_HABITRPG_USER_ID
 api_token: YOUR_HABITRPG_API_TOKEN
 ```
@@ -41,14 +41,14 @@ Once your config is set up the following commands should work.
 
 Show your current status (pretty formatted):
 ```sh
-$ hrpg status
+$ hab status
 ```
 
-![hrpg status screenshot](https://dl.dropboxusercontent.com/u/443279/hrpg_status.png)
+![hab status screenshot](https://dl.dropboxusercontent.com/u/443279/hrpg_status.png)
 
 Show your full stats:
 ```sh
-$ hrpg stats
+$ hab stats
 # HP 47.1
 # MAX_HP 50
 # MP 44
@@ -65,43 +65,43 @@ $ hrpg stats
 
 List your habits:
 ```sh
-$ hrpg habits
+$ hab habits
 # Study
 # Turn out the lights
 ```
 
 List your dailies:
 ```sh
-$ hrpg dailies
+$ hab dailies
 # Feed the fish
 # Sort mail
 
-$ hrpg dailies --completed
+$ hab dailies --completed
 # Feed the fish
 
-$ hrpg dailies --uncompleted
+$ hab dailies --uncompleted
 # Sort mail
 ```
 
 List your todos:
 ```sh
-$ hrpg todos
+$ hab todos
 # Remember the milk
 # Put the bins out
 
-$ hrpg todos --completed
+$ hab todos --completed
 # Remember the milk
 
-$ hrpg todos --uncompleted
+$ hab todos --uncompleted
 # Put the bins out
 ```
 
 Add tasks by using STDIN:
 ```sh
-echo "Remember the milk" | hrpg todos
+echo "Remember the milk" | hab todos
 ```
 
 For more information:
 ```sh
-$ hrpg help
+$ hab help
 ```
