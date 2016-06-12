@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'vcr', '~> 2.9'
   spec.add_development_dependency 'pry', '~> 0.10'
   spec.add_development_dependency 'rubocop', '~> 0.32'
-  spec.add_runtime_dependency 'habitica_client', '0.0.7'
+  spec.add_runtime_dependency 'habitica_client', '1.0.0'
   spec.add_runtime_dependency 'rumoji', '~> 0.4'
   spec.add_runtime_dependency 'colorize', '~> 0.7'
   spec.add_runtime_dependency 'commander', '~> 4.3'

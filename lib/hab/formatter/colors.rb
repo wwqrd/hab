@@ -8,7 +8,7 @@ module Hab::Formatter
       -1..1 => :light_yellow,
       -5..-1 => :yellow,
       -10..-5 => :light_red
-    }
+    }.freeze
 
     STAT_COLORS = {
       HP: :red,
@@ -16,10 +16,10 @@ module Hab::Formatter
       EXP: :yellow,
       DAILIES: :light_magenta,
       TODOS: :light_blue
-    }
+    }.freeze
 
     def value_color(value)
-      VALUE_COLORS.select { |key, color| key.cover? value }.values.first
+      VALUE_COLORS.select { |key, _color| key.cover? value }.values.first
     end
 
     def stat_color(label)

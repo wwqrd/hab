@@ -5,9 +5,9 @@ module Hab
       if options.all
         tasks
       elsif options.completed
-        self.completed(tasks)
+        completed(tasks)
       else
-        self.uncompleted(tasks)
+        uncompleted(tasks)
       end
     end
 

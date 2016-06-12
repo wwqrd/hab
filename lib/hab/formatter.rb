@@ -10,10 +10,10 @@ module Hab
 
     module ClassMethods
 
-      def status(user)
-        stats = user.stats
-        dailies = user.tasks.dailies
-        todos = user.tasks.todos
+      def status(client)
+        stats = client.user.stats
+        dailies = client.tasks.dailies
+        todos = client.tasks.todos
         dailies_complete_count = dailies.count(&:completed?)
         todos_complete_count = todos.count(&:completed?)
         <<-BLOCK
@@ -58,7 +58,6 @@ BLOCK
             .strip
             .colorize(value_color(task.value))
         end
-
       end
 
     end
